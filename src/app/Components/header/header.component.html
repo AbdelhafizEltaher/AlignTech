@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+    <div class="container">
+        <a routerLink="home"class="navbar-brand ms-3 ms-md-1 fs-3">AlignTech.com</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hiddenitems">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="hiddenitems">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a routerLink="/pages/home" routerLinkActive="text-warning"  class="nav-link fs-5">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/pages/contactus" routerLinkActive="text-warning"  class="nav-link fs-5">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/pages/aboutus" routerLinkActive="text-warning"  class="nav-link fs-5">About Us</a>
+                </li>
+
+                <li class="nav-item">
+                    <a routerLink="/pages/movies" routerLinkActive="text-warning"  class="nav-link fs-5">Movies </a>
+                </li>
+
+                <li class="nav-item">
+                    <a routerLink="/pages/Category" routerLinkActive="text-warning"  class="nav-link fs-5">Categories </a>
+                </li>
+             
+                <li class="nav-item" >
+                    <a routerLink="/pages/Cart" routerLinkActive="text-primary"  class="nav-link fs-5"><i class="bi bi-cart4 fw-bold fs-5 text-warning"></i>
+                   <span class="mx-1 text-warning">{{calcCartItems()}}</span>     
+                 
+                </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/" (click)="logOut()"  class="nav-link fs-5">logOut</a>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+</nav>

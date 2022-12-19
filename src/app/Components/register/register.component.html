@@ -1,0 +1,24 @@
+<section class="body bg-dark">
+
+    <form [formGroup]="RegisterForm">
+        <div class="form_group">
+            <label for="username">Name</label>
+            <input type="text" formControlName="name" placeholder="Enter Your UserName" pattern='^[A-Za-z]{4,}' id="username"
+                required>
+        </div>
+        <div class="form_group">
+            <label for="username">Email</label>
+            <input type="email" formControlName="email" placeholder="Enter Your UserName" pattern='^[A-Za-z]{4,}@[A-Za-z]{3,6}[\.][a-z]{2,}$' id="username"
+                required>
+        </div>
+        <div class="form_group">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" placeholder="Enter Your Password" pattern="[A-Za-z0-9]{4,}" id="password" required
+                title="Must be at least 8 characters">
+        </div>
+        
+        <button type="submit" (click)="Register()">Create Account</button>
+    </form>
+    <a class="register" (click)="GoToLogin()">You Have Account  ... So Login</a>
+</section>
+

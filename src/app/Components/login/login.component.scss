@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("^assets/undraw_shared_workspace_re_3gsu.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  
+  form {
+    padding: 7em 0em;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    .form_group {
+        display: flex;
+        margin: 1.6% 0%;
+        label {
+            font-family: cursive;
+            flex-grow: 1;
+            font-weight: bold;
+            font-size: 22px;
+            color: darkcyan;
+            transform-style: preserve-3d;
+          }
+      }
+      input {
+        padding: 0.5em 0.7em;
+        background-color: #ccc;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        transition: border;
+        border: 5px solid #CCC;
+      }
+
+      button {
+        margin: 2% auto;
+        background-color: #ccc;
+        color: darkcyan;
+        padding: 0.5rem 8.7rem;
+        font-family: cursive;
+        font-weight: bold;
+        font-size: 19px;
+        text-transform: capitalize;
+        border-radius: 15px;
+        border: none;
+        transition: 0.5s;
+      }
+
+     
+  }
+  .register {
+    text-decoration: underline;
+    font-size: 20px;
+    color: darkcyan;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  form .form_group:has(:invalid) input {
+    border: 5px solid red;
+  }
+  form .form_group:has(:invalid:not(:focus)) {
+    -webkit-animation: shake 0.4s;
+            animation: shake 0.4s;
+  }
+  form .form_group:has(:focus) input {
+    border: 5px solid orange;
+  }
+  form .form_group:has(:valid) input {
+    border: 5px solid green;
+  }
+  form .form_group:has(:-moz-placeholder-shown) input {
+    border: 5px solid #ccc;
+  }
+  form .form_group:has(:-ms-input-placeholder) input {
+    border: 5px solid #ccc;
+  }
+  form .form_group:has(:placeholder-shown) input {
+    border: 5px solid #ccc;
+  }
+  form .form_group:has(:-moz-placeholder-shown:not(:focus)) input {
+    animation: none;
+  }
+  form .form_group:has(:-ms-input-placeholder:not(:focus)) input {
+    animation: none;
+  }
+  form .form_group:has(:placeholder-shown:not(:focus)) input {
+    -webkit-animation: none;
+            animation: none;
+  }
+  form .form_group input:hover {
+    cursor: pointer;
+  }
+  form:valid button {
+    background-color: darkcyan;
+    color: #CCC;
+    cursor: pointer;
+  }
+  form:valid button:hover {
+    transform: scale(1.1);
+  }
+  
+  form:valid label {
+    -webkit-animation: word 2s;
+            animation: word 2s;
+  }
+  
+  @-webkit-keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    20%, 40%, 60%, 80% {
+      transform: translateX(-6%);
+    }
+    10%, 30%, 50%, 70%, 90% {
+      transform: translateX(6%);
+    }
+  }
+  
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    20%, 40%, 60%, 80% {
+      transform: translateX(-6%);
+    }
+    10%, 30%, 50%, 70%, 90% {
+      transform: translateX(6%);
+    }
+  }
+  @-webkit-keyframes word {
+    25% {
+      transform: rotateY(360deg);
+    }
+    75% {
+      transform: rotateX(180deg);
+    }
+  }
+  @keyframes word {
+    25% {
+      transform: rotateY(360deg);
+    }
+    75% {
+      transform: rotateX(180deg);
+    }
+  }
+
+
+
+
+
+
+  
+.frame{
+  width: 100%;
+  height: 100%;
+  background:  rgba(0,0,0,.5);
+  position: absolute;
+  z-index: 100px;
+  top:0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.errorMsg {
+  position: absolute;
+	width: 300px;
+	height: 250px;
+	background: #fff;
+	border-radius: 3px;
+	box-shadow: 4px 8px 12px 0 rgba(0,0,0,0.4);
+	text-align: center;
+	overflow: hidden;
+
+	
+	img {
+		margin-top: 24px;
+	}
+	
+	.title {
+		display: block;
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: 400;
+		margin: 14px 0 5px 0;
+	}
+	
+	p {
+		font-size: 14px;
+		font-weight: 300;
+		line-height: 19px;
+		margin: 0;
+		padding: 0 30px;
+	}
+	
+	.button {
+		position: absolute;
+		height: 40px;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: #F65656;
+		color: #fff;
+		line-height: 40px;
+		font-size: 14px;
+		font-weight: 400;
+		cursor: pointer;
+		
+		&:hover {
+			background: #EC3434;
+		}
+		
+	}
+	
+}
+
+@keyframes show-modal {
+	0% {
+		transform: scale(0);
+	}
+	60% {
+		transform: scale(1.1);
+	}
+	80% {
+		transform: scale(.95);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes hide-modal {
+	0% {
+		transform: scale(1);
+	}
+	20% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(0);
+	}
+}

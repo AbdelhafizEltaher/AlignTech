@@ -1,0 +1,25 @@
+<section class="body bg-dark">
+
+    <form [formGroup]="LoginForm">
+        <div class="form_group">
+            <label for="username">Email</label>
+            <input type="email" formControlName="email" placeholder="Enter Your UserName" pattern='^[a-z-A-Z]{4,}@[a-z-A-Z]{3,6}[\.][a-z]{2,}$' id="username"
+                required>
+        </div>
+        <div class="form_group">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" placeholder="Enter Your Password" pattern="[a-zA-Z0-9]{4,}" id="password" required
+                title="Must be at least 8 characters">
+        </div>
+        <button type="submit" (click)="Login()">Click To Login</button>
+    </form>
+    <a class="register" (click)="GoToRegister()">Don't Have Account  ... So Create One</a>
+</section>
+<div class="frame" *ngIf="ErrorLogin">
+    <div class="errorMsg">
+        <img src="https://100dayscss.com/codepen/alert.png" width="44" height="38" />
+            <span class="title">OOps !</span>
+            <p style="text-transform: capitalize;">There is Some Error In Login Infromation ... Please Check That Email and Password Are correct and Try Again</p>
+            <div class="button" (click)="ErrorLogin=false">Close</div>
+      </div>
+</div>

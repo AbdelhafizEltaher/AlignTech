@@ -1,0 +1,35 @@
+<section class="container-fluid pt-5" *ngIf="!waiting">
+    <div class="container-fluid d-flex flex-row justify-content-center flex-wrap mt-2 p-0 pt-5">
+                <div class="col-md justify-content-center align-items-center px-0" *ngFor="let item of listOfMovies">
+                    <div class="card m-3 border border-0" style="width:16.5em;">
+                        <img class="card-img img-fluid " [src]="'https://test-api.storexweb.com/'+item.image">
+                        <div class="card-img-overlay d-flex justify-content-end" (click)="RemoveFromCart(item.id)">
+                            <a class="card-link text-danger like"></a>
+                        </div>
+                        <div class="card-body ">
+                            <h4 class="card-title">{{item.name}}</h4>
+                            <p class="card-text fs-6"> if you want to see more details about this Film please Click here
+                            </p>
+                            <div class="buy d-flex justify-content-center align-items-center">
+                                <a class="btn btn-danger">Remove From Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+
+
+</section>
+
+<div class="py-5" *ngIf="waiting">
+    <!-- JQUERY and Normalize.css INSTALLED -->
+
+    <div class="overlay">
+        <div class="overlayDoor"></div>
+        <div class="overlayContent">
+            <div class="loader">
+                <div class="inner"></div>
+            </div>
+        </div>
+    </div>
+</div>

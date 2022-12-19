@@ -1,0 +1,47 @@
+<section class="py-5 mt-5 px-1">
+    <select class="form-select form-select-lg w-50 mx-auto" aria-label=".form-select-lg example"  (change)="showCateMovies($event)">
+        <option selected>Select Your Categorie</option>
+        <option  *ngFor="let item of listOfCateg" [value]="item.id">{{item.name}}</option>
+      </select>
+
+
+    <section class="container-fluid pt-5" *ngIf="!waiting">
+        <div class="container-fluid pt-5">
+            <div class="container-fluid mt-2">
+                <div class="d-flex flex-row justify-content-start flex-wrap w-100">
+                    <div class="col justify-content-center align-items-center px-0" *ngFor="let item of listOfMovies">
+                        <div class="card m-3 border border-0" style="width:16.5em;">
+                            <img class="card-img img-fluid " [src]="'https://test-api.storexweb.com/'+item.image">
+                            <div class="card-img-overlay d-flex justify-content-end" (click)="GoToMovies(item)">
+                                <a class="card-link text-danger like"></a>
+                            </div>
+                            <div class="card-body ">
+                                <h4 class="card-title">{{item.name}}</h4>
+                                <p class="card-text fs-6"> if you want to see more details about this Film please Click here
+                                </p>
+                                <div class="buy d-flex justify-content-center align-items-center">
+                                    <a class="btn btn-success"> More Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+    </section>
+    
+    <div class="py-5" *ngIf="waiting">
+        <!-- JQUERY and Normalize.css INSTALLED -->
+    
+        <div class="overlay">
+            <div class="overlayDoor"></div>
+            <div class="overlayContent">
+                <div class="loader">
+                    <div class="inner"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

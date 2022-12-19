@@ -1,0 +1,75 @@
+<section class="py-5">
+    <div class="py-5">
+        <div class="container">
+            <div class="heading-section">
+                <h1 class="mb-5 mt-2">Movie Details</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <img [src]="'https://test-api.storexweb.com/'+movie.image"
+                        width="350px" height="350px" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="product-dtl">
+                        <div class="product-info">
+                            <div class="product-name">{{movie.name}}</div>
+                            <div class="reviews-counter">
+                                <div class="rate">
+                                    <input type="radio" id="star5" name="rate" value="5" checked />
+                                    <label for="star5" title="text">5 stars</label>
+                                    <input type="radio" id="star4" name="rate" value="4" checked />
+                                    <label for="star4" title="text">4 stars</label>
+                                    <input type="radio" id="star3" name="rate" value="3" checked />
+                                    <label for="star3" title="text">3 stars</label>
+                                    <input type="radio" id="star2" name="rate" value="2" />
+                                    <label for="star2" title="text">2 stars</label>
+                                    <input type="radio" id="star1" name="rate" value="1" />
+                                    <label for="star1" title="text">1 star</label>
+                                </div>
+                                <span>3 Reviews</span>
+                            </div>
+                        </div>
+                        <p>{{movie.description}}</p>
+
+
+                       <div class="d-flex justify-content-between mt-5">
+                        <a class="text-decoration-none round-black-btn m-2" (click)="Gonext()">Next Product</a>
+                        <a class="text-decoration-none round-black-btn m-2" (click)="Goprev()">Previous Product</a>
+                       </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="product-info-tabs">
+              
+             
+                <div class="px-5 d-flex mx-5 justify-content-center align-items-center">
+                        <a class="text-decoration-none round-black-btn mx-2 text-center"
+                         (click)="AddToCard()" >Add to Cart</a>
+
+                            <a class="text-decoration-none round-black-btn px-5" (click)="goback()">Go Back To Movies </a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</section>
